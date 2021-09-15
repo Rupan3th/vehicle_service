@@ -1,0 +1,96 @@
+/* pages/orderDetail/orderDetail.wxss */
+
+page {
+  background-color: #F9F9F9;
+  height: 100%;
+}
+.vehicle-info-box{  
+  margin: 20px 5%;
+  background: white;
+  position: relative;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-top: 2px;
+  padding-bottom: 10px;
+}
+.vehicle_info_title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-items: left;
+  font-size: 24px;
+  color: #333333;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+.brand-line{  
+  display: flex;
+  align-items: left;  
+  margin-bottom: 16px;
+  margin-left: 6px;
+}
+.plate-number{  
+  width: fit-content;
+  background-color: #F9F9F9;
+  margin-bottom: 10px;
+  padding-right: 8px;
+  padding-left: 8px;
+  margin-left: 6px;
+  color: #333333;
+  font-size: 15px;
+}
+.car-owner-info{
+  display: flex;
+  align-items: left;  
+  margin-bottom: 10px;  
+}
+.carowner-title{
+  color: #999999;
+  font-size: 13px;
+  margin-right: 20px;
+}
+.carowner-value{
+  color: #333333;
+  font-size: 16px;
+  font-weight: 500;
+}
+.col-line{
+  border-left:1px solid #D9D9D9;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-right: 20px;
+}
+.insurance-line{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.row-line{
+  border-top:1px solid #F3F3F3;  
+  margin-right: 12px;
+  margin-bottom: 8px;
+}
+.remarks-line{
+  display: flex;
+  align-items: left;
+  color: #717171; 
+  font-size: 14px
+}
+.photo-box{
+  display: flex;
+  align-items: left;
+  margin-bottom: 20rpx;
+}
+.photo-gallery{
+  width:100px; 
+  height:100px;  
+  margin-right: 10px;
+  border-radius: 10px;
+}
+.coin-line{
+  font-size: 15px;
+  color: #666666;  
+  margin-left: 24px;
+  margin-top: 8px;  
+}

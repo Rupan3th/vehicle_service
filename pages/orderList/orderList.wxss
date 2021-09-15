@@ -1,0 +1,170 @@
+/* pages/orderList/orderList.wxss */
+/* @import '../../miniprogram_npm/weui-miniprogram/weui-wxss/dist/style/weui.wxss'; */
+page {
+  background-color: #F9F9F9;
+  height: 100%;
+}
+
+.weui-tabs-bar__wrp {
+  border-bottom: 1px solid #eee;
+  /* margin-top: 10px; */
+}
+
+.weui-tabs-swiper {
+  width: 100%;
+
+  /* overflow: scroll; */
+}
+
+.tab-content {
+  /* height: 100px; */
+  width: 98%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  flex-flow: column;
+  position: absolute;
+  display: -webkit-box;
+  left: 1%;
+}
+
+cover-view {
+  color: white;
+  width: auto;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.title {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  color: white;
+  word-wrap: break-word;
+  font-size: 18px;
+}
+
+.tab-content-item {
+  width: 90%;  
+  margin: 20px 5% ;
+  background: white;
+  position: relative;
+  border-radius: 10px;
+}
+.tab-content-item .state-box{
+  display: flex;
+  align-items: center;
+  height: 34px;
+  width: 100%;
+}
+.tab-content-item .state-box .order-time{
+  margin-left: 3%;
+  font-size: 14px;
+}
+.tab-content-item .state-box .state-text{
+  margin-left: auto; 
+  margin-right: 3%;
+  font-size: 14px;
+}
+.tab-content-item .line{
+  border-top:1px solid #F3F3F3;
+}
+
+.orderInfo-box {
+  margin: 3%;
+  padding-bottom: 12px;
+}
+.orderInfo-box .brand-line{  
+  display: flex;
+  align-items: left;  
+  margin-bottom: 10px;
+}
+.orderInfo-box .plate-number{  
+  width: fit-content;
+  background-color: #F9F9F9;
+  margin-top: 6px;
+  color: #333333;
+  font-size: 16px;   
+  font-weight: 400; 
+}
+.orderInfo-box .garagename{  
+  width: fit-content;
+  margin-top: 6px;
+  color: #333333;
+  font-size: 15px;  
+  font-weight: 600; 
+}
+.orderInfo-box .order-detail{
+  background-color: #F9F9F9;  
+  padding: 6px;
+  margin-top: 8px;
+}
+.orderInfo-box .coin-line{
+  font-size: 15px;
+  color: #6B6B6B;  
+  margin: 1%;
+}
+.orderInfo-box .order-number-line{
+  font-size: 15px;
+  color: #CC0000;
+  margin: 1%;
+}
+
+.no-result{  
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;  
+  margin-top: 70px;
+}
+
+
+.weui-tabs-bar__title {
+  margin: 0px 10px;
+  font-size:14px;
+  font-weight: 500;
+}
+
+.tab-bar-title__selected {
+  font-size: 22px;
+  margin-top: -10px;
+  font-weight: 500;
+}
+
+/* 自定义 */
+.weui-tabs-bar__content {
+  white-space: nowrap;
+  display: flex;
+  flex: 1;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+.playIcon {
+  width: 100%;
+  height: 100%;
+
+}
+
+.image_box {
+  width: 50px;
+  height: 50px;
+
+  z-index: 1000;
+  position: absolute;
+  top: 100px;
+
+  left: 50%;
+
+}
+
+.btn {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 130px;
+  right: 15px;
+  border-radius: 50%;
+}

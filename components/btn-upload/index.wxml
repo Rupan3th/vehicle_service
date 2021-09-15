@@ -1,0 +1,23 @@
+<!--miniprogram/btn-upload/index.wxml-->
+<view class="btn-upload-wrapper">
+  <view class="fill-parent centering-children" bindtap="onClick">
+    <view wx:if="{{!!image}}" class="fill-parent" catchtap="onClickImage">
+      <image src="{{image}}" style="width: 100%" mode="widthFix"></image>
+      <view class="btn-upload-reselect" catchtap="onClick">
+        <view>点击修改</view>
+      </view>
+    </view>
+    <image wx:else src="../../image/plus.png" style="width: 24px;" mode="widthFix"></image>
+  </view>
+  <action-sheet hidden="{{actionSheetHidden}}" bindchange="listenerActionSheet" containerStyle="background-color: black;">
+    <block>
+      <action-sheet-item class="action-item"  catchtap="onActionMenuClicked" data-index="0">拍照</action-sheet-item>
+      <action-sheet-item class="action-item"  catchtap="onActionMenuClicked" data-index="1">从相册中选取</action-sheet-item>
+      <action-sheet-item wx:if="{{!!image}}" class="action-item"  catchtap="onActionMenuClicked" data-index="2">删除</action-sheet-item>
+    </block>
+    <!-- <view>
+      <action-sheet-item class="action-item" style="margin-top: 12px;"  catchtap="onCancelMenuClicked" data-index="3">取消</action-sheet-item>
+    </view> -->
+    <action-sheet-cancel class="action-item">取消</action-sheet-cancel>
+  </action-sheet>
+</view>

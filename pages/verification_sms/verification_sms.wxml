@@ -1,0 +1,16 @@
+<!--pages/verification_sms/verification_sms.wxml-->
+<view class="container_pan">  
+   <view style="color: {{wrongPhoneColor}}; font-size: 24rpx; padding-left: 10px; margin-bottom: 10rpx; ">请输入正确的手机号码</view>
+   <view class="input_phone">     
+      <input maxlength="11" placeholder='请输入手机号' bindinput='bindPhoneInput'/> 
+   </view>
+   <view style="color: {{wrongCodeColor}}; font-size: 24rpx; padding-left: 10px; margin-bottom: 10rpx; ">请输入正确的验证码</view>
+   <view class="input_code">
+      <input maxlength="4" placeholder='请输入验证码' bindinput='bindCodeInput' style='width:150%;'/> 
+      <button class='codeBtn' style='width:100%; display: {{codeBtnShow}};' bindtap='getCode'>{{btnValue}}</button>
+      <view class='codenoneBtn' style="display: {{codenoneBtnShow}}; ">{{second}}后再次获取验证码</view>
+   </view>   
+  <button class='save' bindtap='save' style="width: 250px;">登录</button>
+  <text class="text-pan">若手机号未注册将自动注册</text> 
+  <text class="text-pan">注册/登录即为同意《xxxxx协议》</text> 
+</view>

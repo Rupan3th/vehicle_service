@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "发布推修单",
+  "usingComponents": {
+    "picker": "../../picker/picker",
+    "mp-uploader": "weui-miniprogram/uploader/uploader",
+    "mp-cells": "weui-miniprogram/cells/cells",
+    "mp-cell": "weui-miniprogram/cell/cell",
+    "btn-upload": "../../components/btn-upload"    
+  }
+}

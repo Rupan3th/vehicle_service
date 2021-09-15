@@ -1,0 +1,41 @@
+<!--pages/storeList/sharedGarage.wxml-->
+<view class="garagelist-item" bindtap="onChooseGarage" data-id="{{garage.id}}" >                  
+            <view class="garage-info-box">
+                <view class="info-contents">
+                    <image style="height:175rpx; width:175rpx; min-width:175rpx; min-width:175rpx; border-radius: 10rpx;" mode="widthFix" src="{{garage.image}}"></image>
+                    <view style="margin-left:18rpx;">
+                        <view style="color: #333333; font-size: 34rpx; font-weight:bold; margin-top:-10rpx; margin-bottom:12rpx;">{{garage.name}}</view>
+                        <view class='brand-line'>
+                            <text class='shiesdian'>{{garageTypes[garage.type] || '4S店'}}</text>
+                            <text wx:for="{{garage.brands}}" wx:for-index="brandIndex" wx:for-item="brand" wx:key="brandIndex" class="brand">{{brand}}</text>
+                        </view>
+                        <view class='address-line' bindtap="openMap" data-latitude="{{garage.latitude}}" data-longitude="{{garage.longitude}}">
+                            <image style="min-width: 27rpx; width: 27rpx; height: 32rpx" src='../../image/marker.png'></image>
+                            <view style='color:#666666; font-size:28rpx; font-weight: bold; margin-top:-5rpx; margin-left:10rpx;'>{{garage.address}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class='score-line'>
+                    <image style="width:32rpx; height:35rpx; margin-right:8rpx;" src='../../image/{{garage.score >= 1 ? "star_on" : "star_off"}}.png'></image>       
+                    <image style="width:32rpx; height:35rpx; margin-right:8rpx;" src='../../image/{{garage.score >= 2 ? "star_on" : "star_off"}}.png'></image>  
+                    <image style="width:32rpx; height:35rpx; margin-right:8rpx;" src='../../image/{{garage.score >= 3 ? "star_on" : "star_off"}}.png'></image>  
+                    <image style="width:32rpx; height:35rpx; margin-right:8rpx;" src='../../image/{{garage.score >= 4 ? "star_on" : "star_off"}}.png'></image>  
+                    <image style="width:32rpx; height:35rpx; margin-right:8rpx;" src='../../image/{{garage.score >= 5 ? "star_on" : "star_off"}}.png'></image>              
+                    <view style="color: #FFC33B; font-size: 28rpx; font-weight:bold; margin-left: 10rpx;">{{garage.score}}</view>
+                    <view class="max-char">{{garage.tag || '最多六个文字'}}</view>
+                </view>
+                <view class="insurance-line">
+                    <text wx:for="{{garage.insurances}}" wx:for-item="ins" wx:key="index" class='insurance'>{{ins}}</text>
+                </view>
+                <view style="border-top:1px solid #F3F3F3; margin-top:16rpx;"></view>
+                <view class="distens-line">
+                    <view>{{garage.distance || 9999}}km</view>
+                    <button open-type="share" data-id="{{garage.id}}" class="btn-share" 
+                    style="display: flex; color: #666666; font-size: 24rpx; margin-left: auto; margin-right: 0rpx; align-items: center;">
+                        <image style="width:16rpx; height:26rpx; margin-right:8rpx;" src='../../image/sharing.png'></image>
+                        去分享                        
+                    </button>
+                </view>
+            </view>               
+              
+        </view>

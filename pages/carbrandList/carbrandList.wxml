@@ -1,0 +1,19 @@
+<!--pages/carbrandList/carbrandList.wxml-->
+<view class='flex ' style="padding-left:10px; ">
+  <scroll-view class="flex1" scroll-y scroll-into-view="id{{toView}}" style='height:calc(100vh); padding-top: 60rpx; padding-bottom: 60rpx;'>
+    <block wx:for='{{brands}}' wx:key='id'>
+      <view class='lh40 fz16 color9e ml10'  id='id{{item.initial}}' >{{item.initial}}</view>
+      <view class='bgf fz14' style="background-color: #EFEFF4;">
+        <view class='flex alic borderbe0 ml10 pt15 pb15' style = 'border-style:none; width: 50%; height: 50px; padding:0px 20px;' 
+              wx:for='{{item.list}}' wx:key='i' wx:for-item='n' data-name='{{n.name}}' data-id='{{n.id}}' data-url="{{n.image}}" bindtap='onChooseBrand'>
+          <image src='{{n.image}}' class='img mr15'></image>
+          <text>{{n.name}}</text>              
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+      
+  <view class='posFix right0 tc fz12 flex justsa colu' style='height:calc(100% - 300rpx); margin-top: 100rpx; margin-right: 24px'>       
+    <view wx:for='{{nav}}' bindtap='toView' data-i='{{index}}' wx:key='a'>{{item}}</view>
+  </view>
+</view>

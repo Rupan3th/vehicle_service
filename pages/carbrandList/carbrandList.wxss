@@ -1,0 +1,26 @@
+/* pages/carbrandList/carbrandList.wxss */
+page{
+  background: #EFEFF4;
+}
+.head{
+  background: #EFEFF4;height: 100rpx;
+}
+.box{
+  width: calc(100% - 20px);height: 60rpx;  
+}
+.box .w{width: 100rpx;}
+.say{
+ width: 40rpx;height: 40rpx;
+}
+.img{
+  width: 80rpx;
+  height:80rpx;
+  /* border-radius: 50%; */
+  box-shadow: 0 5px 10px #aaa;
+}
+.star{width: 32rpx;height:32rpx;border-radius: 50%}
+.bgf view:last-of-type{border: 0}
+.r10{right: 20rpx;}
+.right{
+  width: 50rpx;height:50rpx;
+}

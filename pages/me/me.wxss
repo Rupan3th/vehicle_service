@@ -1,0 +1,71 @@
+/* pages/me/me.wxss */
+page {
+  background-color: #F9F9F9;
+  height: 100%;
+}
+.my-container {
+  height: 100%;
+}
+.userinfo {
+  padding: 20px;
+  box-sizing: border-box;
+}
+.avata-pan{
+  display: flex;
+}
+.userinfo-avatar {
+  align-items: center;
+  width: 80px;
+  height: 80px; 
+  border-radius: 10%;
+}
+.nickname-pan{
+  margin-left: 12px;
+  font-size: 14px;
+  color: #999999;
+}
+.userinfo-nickname {
+  color: #3A3A3A;
+  font-size: 24px;
+}
+.usermotto {
+  margin-top: 200px;
+}
+.coin-pan{
+  height: 100px;
+  border: 1px solid #D9D9D9;
+  background-color: white;
+  display: flex;
+  border-radius: 10px;  
+  margin-top: 10px;
+}
+.coinboximg{
+  width:90px; 
+  height:71px; 
+  margin-left:20px; 
+  align-self:center; 
+  border: 1px dashed #D9D9D9;
+}
+.coinamount-pan{
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: 40px;
+  font-size: 14px;
+  color: #999999;
+  align-items: center;
+}
+.card-pan{  
+  background-color: white;
+  height: 62px;  
+  display: flex;
+  border-radius: 10px;  
+  margin-top: 20px;
+  align-items:center;  
+}
+.card-connect{   
+  padding: 1px 16px;
+  font-size:12px; 
+  color:white;
+  border-radius: 10px;  
+}

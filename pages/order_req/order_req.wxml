@@ -1,0 +1,190 @@
+<!--pages/order_req/order_req.wxml-->
+<!-- 虚拟键盘 -->
+<view class="keyboard" style="display: {{KeyboardState}};">
+      <view class="keyboardClose">
+        <view class="keyboard_title">请选择</view>
+        <view class="keyboardClose_btn" bindtap='closeKeyboard'><image style="width: 35rpx; height: 35rpx;" src="../../image/close_btn.png"></image></view>
+      </view>
+      <!-- 省份简写键盘 -->
+      <view class="keyboard-item" >
+        <view class="keyboard-line" wx:for="{{provinces}}" wx:key="index">
+          <view class="keyboard-btn" wx:for="{{item}}" wx:key="index" data-val="{{itemlist}}" wx:for-item="itemlist" bindtap='bindChooseProv'>{{itemlist}}</view>
+        </view>
+       
+      </view>
+    </view>
+<view style="background-color:black; width:100%; height: 100%; position: fixed; z-index:99; opacity: 0.5; display: {{modalStateFull}};"></view>
+
+<scroll-view scroll-y="true" scroll-into-view="{{toView}}"  style="height:{{ windowHeight-1 }}px; width:100%; " >
+  <view class="page">
+    <view class="section-title">车辆信息</view>
+
+    <!-- select car brand -->
+    <view id="block_brand" class="cells_type_a" style="margin-top: 60rpx; margin-bottom: 60rpx;">
+      <view class="weui-cells__title"><text style="color:red;">* </text>车辆品牌</view>
+      <view class="weui-cells__contents" bindtap="gotoBrandList">{{brand_name}}
+        <view class="navigator-arrow" style="margin-left: 10px"></view>
+      </view>
+    </view>
+
+    <!----------------------------------------------------------------------------->
+    <!-- 车牌号码输入框 -->
+    <view id="block_plate" class="carNumber" style="margin-top: 18px;">
+      <view class="weui-cells__title"><text style="color:red;">* </text>车牌号</view>
+      <!-- 车牌号头两位 -->
+      <view class="carNumber-items">
+        <view class="carNumber-items-box" bindtap='openKeyboard' >
+          <view class="carNumber-items-box-list">{{carnum[0]}}</view> 
+          <view class="dropdown-arrow" style="margin-left: 10rpx"></view>
+        </view>
+        <!-- 常规 -->
+        <view class="carNumber-item" bindtap='openNumKeyboard'>{{carnum[1] || ''}}</view>
+        <view class="carNumber-item" bindtap='openNumKeyboard'>{{carnum[2] || ''}}</view>
+        <view class="carNumber-item" bindtap='openNumKeyboard'>{{carnum[3] || ''}}</view>
+        <view class="carNumber-item" bindtap='openNumKeyboard'>{{carnum[4] || ''}}</view>
+        <view class="carNumber-item" bindtap='openNumKeyboard'>{{carnum[5] || ''}}</view>
+        <view class="carNumber-item" bindtap='openNumKeyboard'>{{carnum[6] || ''}}</view>
+        <!-- 新能源 -->
+        <view class="carNumber-item {{showNewPower ? '': 'carNumber-item-newpower'}}" bindtap='openNumKeyboard'>
+          <view wx:if="{{!showNewPower}}" bindtap='showPowerBtn'>
+            <view class="carNumber-newpower-add">+</view>
+            <view style="font-size: 20rpx;">新能源</view>
+          </view>
+          <view wx:if="{{showNewPower}}" bindtap='openNumKeyboard'>
+            {{carnum[7]}}
+          </view>
+        </view>
+      </view>
+    </view>   
+
+    
+
+    <!-- 虚拟键盘 -->
+    <view class="keyboard-num" style='display: {{KeyboardNumState}};'>
+      <view class="keyboardClose">
+        <view class="keyboardClose_btn" bindtap='closeNumKeyboard' style="margin-right:30rpx; margin-top: 20rpx;">
+          <image style="width: 35rpx; height: 35rpx;" src="../../image/close_btn.png"></image>
+        </view>
+      </view>            
+      <!-- 车牌号码选择键盘 -->
+      <view class="keyboard-num-item iscarnumber" >
+        <view class="keyboard-line" wx:for="{{numbers}}" wx:key="index">
+          <view class="keyboard-num-btn" wx:for="{{item}}" wx:key="index" data-val="{{itemlist}}" wx:for-item="itemlist" bindtap='bindChoose'>{{itemlist}}</view>
+        </view>
+        <view class="keyboard-del" bindtap='bindDelChoose'>
+          <text class="font_family icon-shanchu keyboard-del-font">删除</text>
+        </view>
+      </view>
+    </view>
+    <!----------------------------------------------------------------------------->
+
+    <!-- input car owner name -->
+    <view id="block_username" class="cells_type_a" style="margin-top: 60rpx;">
+      <view class="weui-cells__title"><text style="color:red;">* </text>车主姓名</view>
+      <view class="weui-cells__contents" style="margin-right: 34px;">
+        <input maxlength="6" class="input-line" value="{{username}}" bindinput="onInputUsername" placeholder="请输入车主姓名" style="width:100px; "/>
+      </view>
+    </view>
+
+    <!-- input car owner phoneNumber -->
+    <view id="block_mobile" class="cells_type_a" >
+      <view class="weui-cells__title">
+        <text style="color:red;">* </text>车主电话
+        <text wx:if="{{toView === 'block_mobile'}}" style="color:red; margin-left:10px; font-size: 12px;">{{incorrectPhone}}</text>
+      </view>
+      <view class="weui-cells__contents" style="margin-right: 34px;">
+        <input maxlength="11" class="input-line" value="{{mobile}}" bindinput="onInputMobile" placeholder="请输入车主电话" style="width:100px; "/>
+      </view>
+    </view>
+
+    <!-- select Insurance company -->
+    <view id="block_insurance" class="cells_type_a" >
+      <view class="weui-cells__title"><text style="color:red;">* </text>保险公司</view>
+      <view class="weui-cells__contents" bindtap="openInsuranceList">{{insurance_name}}<view class="navigator-arrow" style="margin-left: 10px"></view></view>
+    </view>
+
+    <!-- Setting Estimated arrival time -->
+    <view id="block_arrival" class="cells_type_a" >
+      <view class="weui-cells__title"><text style="color:red;">* </text>预计到店时间</view>
+      <view class="weui-cells__contents" bindtap="showPicker_03" style="margin-right: 26px;">{{picker_03_data[0]}} {{picker_03_data[1]}} {{picker_03_data[2]}}        
+        <text style="color: #999999; ">{{arrivalTtimeplaceholder}}</text>
+        <view class="dropdown-arrow" style="margin-left: 10px"></view>
+      </view>
+    </view>
+    <picker
+          isShowPicker="{{isShow_03}}"
+          bindsure="sureCallBack_03"
+          bindcancle="cancleCallBack_03"
+          scrollType="normal"
+          listData="{{listData_03}}">
+    </picker>
+
+    <!-- input 备注 area -->
+    <view id="block_note" class="cells_type_a" style="margin-top: 66rpx; height: 28px; margin-bottom: 0rpx;" >
+      <view class="weui-cells__title">备注</view>
+      <view class="weui-cells__contents" style="margin-right:30px; color: #999999; font-size:12px;">{{note.length}}/200</view>
+    </view>
+    <view class="textarea-wrp">
+      <textarea value="{{note}}" bindinput="onInputNote" maxlength="200" 
+      placeholder="文字最多不超过200字" auto-focus="true" style="height: 124px" 
+      wx:if="{{!isShow_03 && KeyboardState == 'none' && KeyboardNumState == 'none'}}"/>
+    </view>
+    <!-------------------------------------------------->
+
+    <!-- Photos of damaged parts of the vehicle -->
+    <view id="block_damage_pics">
+      <view style="color: #333333; font-size:24px; margin:44px 24px 0px; ">车辆受损部位照片</view>
+      <view style="color: #CC0000; font-size:12px; margin:0px 24px">* 请上传至少1张“人车合影”活“车辆受损”照片</view>
+      <view class="upload-block-picture-wrapper">
+        <view class="h-centering">
+          <btn-upload btnIndex="0" image="{{car_pics[0].url}}" bind:selectPhoto="onChooseDamagePic"></btn-upload>
+          <btn-upload btnIndex="1" image="{{car_pics[1].url}}" bind:selectPhoto="onChooseDamagePic"></btn-upload>
+          <btn-upload btnIndex="2" image="{{car_pics[2].url}}" bind:selectPhoto="onChooseDamagePic"></btn-upload>
+        </view>
+        <view class="h-centering">
+          <btn-upload btnIndex="3" image="{{car_pics[3].url}}" bind:selectPhoto="onChooseDamagePic"></btn-upload>
+        </view>
+      </view>
+    </view>
+    
+    <!-- Upload this photo -->
+    <view id="block_driving_pics">
+      <view style="color: #333333; font-size:24px; margin:44px 24px 0px; ">上传行驶本照片</view>    
+      <view class="upload-block-picture-wrapper">
+        <view class="h-centering">
+          <view class="v-centering">
+            <btn-upload btnIndex="0" image="{{driving_pics[0].url}}" bind:selectPhoto="onChooseDrivingPic"></btn-upload>
+            <text class="upload-explanation">行驶本正面</text>
+          </view>
+          <view class="v-centering">
+            <btn-upload btnIndex="1" image="{{driving_pics[1].url}}" bind:selectPhoto="onChooseDrivingPic"></btn-upload>
+            <text class="upload-explanation">行驶本背面</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- Upload this photo -->
+    <view id="block_id_pics">
+      <view style="color: #333333; font-size:24px; margin:44px 24px 0px; ">上传行驶本照片</view>
+      <view style="color: #CC0000; font-size:12px; margin:0px 24px;">上传车主身份证，送修的车辆将锁定在您的名下</view>
+      <view class="upload-block-picture-wrapper">
+        <view class="h-centering">
+          <view class="v-centering">
+            <btn-upload btnIndex="0" image="{{id_pics[0].url}}" bind:selectPhoto="onChooseIdPic"></btn-upload>
+            <text class="upload-explanation">行驶本正面</text>
+          </view>
+          <view class="v-centering">
+            <btn-upload btnIndex="1" image="{{id_pics[1].url}}" bind:selectPhoto="onChooseIdPic"></btn-upload>
+            <text class="upload-explanation">行驶本背面</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  
+    <!-- 提交车牌 -->
+    <button class="carNumberBtn" bindtap='onClickNext' style="background-color: #36AA48; color:#ffffff; font-weight: normal;" type="default">下一步</button>    
+    <view style="color: #999999; font-size: 12px; display: flex; flex-direction: column;  align-items: center; margin-bottom:80rpx">点击下一步选择推修门店</view>
+  </view>
+</scroll-view>
+

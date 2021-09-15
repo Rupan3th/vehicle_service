@@ -1,0 +1,65 @@
+<!--index.wxml-->
+<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+<view bindtap='unmodal' style="background-color:black; width:100%; height: 100%; position: fixed; z-index:99; opacity: 0.5; display: {{modalStateFull}};"></view>
+
+<view style="height: 100vh; background-color: #F0F2F5;">
+      <view class='navbar-wrapper' style="height: {{ navbarHeight }}px; padding-top: {{ statusBarHeight }}px;">
+            <image src="../../image/logo.png"></image>
+            <view style="margin-left: 5px;">瓜子推修</view>
+      </view>      
+      <scroll-view class="home-container" scroll-y="true" style="height: calc(100vh - {{navbarHeight+tabBarHeight+1}}px - env(safe-area-inset-bottom));">
+            <view style="padding: 10px 25px;">
+                  <view class="home-announce">
+                        <image src="../../image/icon_announce.png" mode="widthFix" style="width: 20px; min-width: 20px; margin-right: 20px;"></image>
+                        <view>{{ announce }}</view>
+                  </view>
+                  <view class="row_pan" style="margin-top: 30px;">
+                        <view class="home-btn-wrapper-1" bindtap='myOrderList'>
+                              <image src="../../image/home_myorder.png" mode="widthFix" style="width: 100%;"></image>
+                              <view class="view-pos-absoluted">
+                                    <view style="margin-top: 20px; margin-left: 16px; color: #4888da; font-size: 24px; line-height: 24px;">我的</view>
+                                    <view style="margin-top: 5px; margin-left: 14px; color: #666666; font-size: 36px; line-height: 36px;">订单</view>
+                              </view>
+                        </view>
+                        <view class="home-btn-wrapper-1" bindtap='storeList' style="margin-left: 20px;">
+                              <image src="../../image/home_garage.png" mode="widthFix" style="width: 100%;"></image>
+                              <view class="view-pos-absoluted">
+                                    <view style="margin-top: 20px; margin-left: 16px; color: #90C96F; font-size: 24px; line-height: 24px;">维修</view>
+                                    <view style="margin-top: 5px; margin-left: 14px; color: #666666; font-size: 36px; line-height: 36px;">门店</view>
+                              </view>
+                        </view>
+                  </view>
+                  <view class="row_pan">
+                        <view class="home-btn-wrapper-2" bindtap='serving'>
+                              <image src="../../image/home_contact.png" mode="widthFix" style="width: 28px; margin-right: 20px;"></image>
+                              联系客服
+                        </view>
+                        <button open-type="share" class="home-btn-wrapper-2 btn-share" style="margin-left: 20px;">
+                              <image src="../../image/home_share.png" mode="widthFix" style="width: 17px; margin-right: 20px;"></image>
+                              我要分享
+                        </button>
+                  </view>
+                  <view style="margin-top: 30px;">
+                        <image src="../../image/home_together.png" style="width: 100%;" mode="widthFix"></image>
+                  </view>
+            </view>
+      </scroll-view>
+      <tabbar activeIndex="0"></tabbar>      
+</view>
+
+<!-- logon dialog? -->
+<view class="login-dialog" style="display:{{dialoglogin}}; flex-direction:column; align-items: center;">
+    <image style="width: 100%; height: 460rpx;" src="../../image/login_img.png"></image>    
+    <view style="display: flex; flex-direction: row; margin-top: 40rpx; justify-content: space-between;">
+        <button  class='save-ok' open-type="getPhoneNumber" bindgetphonenumber="gotoLogin">登录</button>    
+    </view>
+    <view style="color: #999999; font-size: 24rpx;">点击登录即表示已同意</view>  
+    <view style="color: #36AA48; font-size: 24rpx;">《用户条款》</view>
+</view>
+
+
+
+
+
+
+

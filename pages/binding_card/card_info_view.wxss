@@ -1,0 +1,41 @@
+/* pages/binding_card/card_info_view.wxss */
+
+page {
+  background-color: #F9F9F9;
+  height: 100%;
+}
+.card-shape{
+  margin-top: 40px;
+  margin-left: 20px;
+  margin-right: 20px;   
+}
+.green-header{
+  background-color: #36AA48;
+  color: white;
+  padding-top: 16px;
+  padding-bottom: 12px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.card-contents{
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  padding-top: 16px;
+  padding-bottom: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.image-line{
+  margin-bottom: 10px;
+  width: 20px;
+  height: 20px;
+  border: 1px dashed #D9D9D9;
+}
+.input-line{
+  margin-bottom: 10px;  
+  height: 20px;
+  color: #666666;
+  font-size: 14px;
+  border: 1px dashed white;
+}

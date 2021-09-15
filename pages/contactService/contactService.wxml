@@ -1,0 +1,12 @@
+<!--pages/contactService.wxml-->
+<!-- <web-view src="https://mp.weixin.qq.com/s?__biz=MzIyNjc0MDk4OQ=#wechat_redirect">
+  <cover-view class="topView"></cover-view>
+  <cover-view class="bottomView"></cover-view>
+</web-view> -->
+
+<view class="container">
+  <!-- <image class="qrcode-image" src="../../image/qr.png"></image> -->
+  <canvas style="width: 200px; height: 200px;" canvas-id="myQrcode"></canvas>
+  <view class="explain">长按识别二维码，加客服微信</view>
+  <view class="phoneline">或拨打客服电话：18697656889</view>
+</view>

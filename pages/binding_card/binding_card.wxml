@@ -1,0 +1,38 @@
+<!--pages/binding_card/binding_card.wxml-->
+
+<view class="bind-card-title"><text>绑定银行卡</text></view>
+<view class="commen-line"><text>银行卡信息作为积分结算使用，绑定后不可修</text></view>
+
+<view class="card-num-input">
+  <view>
+    <view class="input-line">卡号</view>
+    <view class="input-line">手机号</view>
+    <view class="input-line">姓名</view>
+    <view class="input-line">身份证号</view>
+  </view>
+  <view style="margin-left:auto; margin-right:50px" class="bank-input-wrapper">
+    <input class="input-line" value="{{cardNum}}" bindinput='bindcardNumInput'/>
+    <input class="input-line" value="{{mobile}}" placeholder="请填写在银行预留的手机号" bindinput='bindmobileInput'/>
+    <input class="input-line" value="{{accountName}}" bindinput='bindaccountNameInput'/>
+    <view  class="input-line" style="display:flex; flex-direction:row; align-items:center;"> 
+      <input value="{{idCardNum}}" bindinput='bindidCardNumInput'/>
+      <image style="width:18px; height:18px; margin-left:20px; visibility: {{!idCardNum ? 'hidden':'visible'}}" src="../../image/close_icon.png" bindtap="clearIdNumber"></image>
+    </view>
+  </view>  
+</view>
+<view>
+  <button class="main_btn" bindtap='card_binding'>确认绑定</button> 
+</view>
+
+
+
+
+
+
+
+
+
+
+
+  
+

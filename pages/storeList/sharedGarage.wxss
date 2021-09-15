@@ -1,0 +1,82 @@
+/* pages/storeList/sharedGarage.wxss */
+page {
+  background-color: #F9F9F9;
+  height: 100%;
+}
+.garagelist-item{
+  background-color: #ffffff;
+  border-radius: 20rpx;
+  margin: 30rpx 40rpx;
+  padding: 20rpx 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+.garage-info-box{
+  margin-left: 18rpx;  
+  width: 100%;
+}
+.info-contents{
+  display:flex;
+  flex-direction: row;
+}
+.brand-line{
+  color: #333333; 
+  font-size: 24rpx;     
+}
+.shiesdian{
+  background-color: #36AA48; 
+  color: #ffffff; 
+  font-size: 26rpx; 
+  border-radius: 20rpx; 
+  padding-left: 10rpx; 
+  padding-right: 10rpx;
+}
+.garagelist-item .brand {
+  background-color: #f3f3f3;
+  border-radius: 16rpx;
+  padding: 2rpx 10rpx;
+  margin: 5rpx;
+}
+.address-line{
+  display:flex;
+  flex-direction: row;
+  margin-top: 12rpx;
+}
+.score-line{
+  display:flex;
+  align-items: center;
+  margin-top: 18rpx;
+}
+.max-char{
+  background-color:#F3F3F3; 
+  margin-left:auto; 
+  margin-right: 0rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx; 
+  font-size:26rpx; 
+  color:#999999;
+  border-radius: 18rpx;
+}
+.insurance-line{
+  color: #999999; 
+  font-size: 26rpx;
+  margin-top: 30rpx;
+}
+.garagelist-item .insurance:not(:first-child) {
+  margin-left: 20rpx;
+}
+.distens-line{
+  display:flex; 
+  flex-direction:row; 
+  align-items:center;
+  font-size: 28rpx;
+  color:#999999;
+  margin-top: 10rpx;
+}
+.btn-share {
+  background-color: white;
+  width: fit-content !important;
+  padding: 0px;
+}
+
+

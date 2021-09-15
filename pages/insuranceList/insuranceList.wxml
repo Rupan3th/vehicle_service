@@ -1,0 +1,7 @@
+<!--pages/insuranceList/insuranceList.wxml-->
+<view class='flex ' style="padding-left:44px; padding-top:30px;">
+  <scroll-view class="flex1" scroll-y scroll-into-view="id{{toView}}" style='height:calc(100vh - 102rpx)'>
+    <view style='padding:12px 0px; font-size:14px; color: #333333'
+      wx:for='{{insuranceList}}' bindtap='onChooseItem' data-id="{{item.id}}" data-name='{{item.name}}' wx:key='id'>{{item.name}}</view>    
+  </scroll-view> 
+</view>

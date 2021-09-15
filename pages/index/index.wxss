@@ -1,0 +1,92 @@
+/**index.wxss**/
+.navbar-wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 4px;
+  display: flex;
+  align-items: center;
+  color: #333333;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: white;
+}
+.navbar-wrapper image {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+.home-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+.home-announce {
+  color: #333333;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.home-btn-wrapper-1 {
+  width: calc(50% - 10px);
+  position: relative;
+}
+
+.home-btn-wrapper-2 {
+  width: calc(50% - 10px);
+  border: 1px solid #333333;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding: 0px 15px;
+  font-size: 16px;
+  color: #333333;
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: normal;
+}
+.btn-share {
+  height: 50px;
+}
+
+.view-pos-absoluted {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.row_pan{
+  display: flex;
+  flex-direction: row;
+}
+.coinboximg{
+  width: 100px;
+}
+.login-dialog{  
+  width:60%;     
+  margin-left: 9%;
+  position: fixed; 
+  top: 300rpx; 
+  background-color: #ffffff; 
+  color: #333333;
+  font-size: 32rpx;
+  font-weight: bold;
+  z-index:100;    
+  border-radius: 20rpx; 
+  padding: 80rpx;
+}
+.save-ok{  
+  height: 90rpx;
+  background: #36AA48;
+  color: white;
+  border-radius: 40rpx;  
+  font-size: 40rpx;
+  font-weight: 400;
+  margin-bottom: 30rpx;
+}

@@ -1,0 +1,105 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<scroll-view scroll-y="true" style="height:{{ windowHeight}}px;width:100%; " >
+  <view class="vehicle-info-box">
+    <view class="vehicle_info_title">
+      <image style="width:20px; height:20px;" src="../../image/vehicle_info.png"></image>
+      <text style="margin-left:8px; ">车辆信息</text>
+    </view> 
+    <view class="brand-line">
+      <image style="width:26px; height:26px;" src="{{brandImgSrc}}"></image>
+      <text style="margin-left:16px; font-size:15px; font-weight:bold; color:#3A3A3A;">{{brandName}}</text>
+    </view>     
+    <view class="plate-number"><text>{{plateNum}}</text></view>
+    <view class="car-owner-info">
+      <view>
+        <view class="carowner-title"><text>车主姓名</text></view>
+        <view class="carowner-value"><text>{{carownerName}}</text></view>
+      </view>
+      <view class="col-line"></view>
+      <view>
+        <view class="carowner-title"><text>车主电话</text></view>
+        <view class="carowner-value"><text>{{carownerPhone}}</text></view>
+      </view>
+    </view>
+    <view class="insurance-line">
+      <image style="width:16px; height:16px;" src="../../image/lock_icon.png"></image>
+      <text style="margin-left:10px; color:#999999; font-size:13px">保险公司:</text>
+      <text style="margin-left:32px; color:#4C4C4C; font-size:16px">{{insuranceComp}}</text>
+    </view>
+    <view class="insurance-line">
+      <image style="width:16px; height:16px;" src="../../image/timer_icon.png"></image>
+      <text style="margin-left:10px; color:#999999; font-size:12px">预计到店时间:</text>
+      <text style="margin-left:32px; color:#333333; font-size:14px">{{EetimatedArrivalTime}}</text>
+    </view>
+    <view class="row-line"></view>
+    <view class="remarks-line">
+      <view><text>备注 ：</text></view>
+      <view style="margin-left: 8px"><text>{{remarks}}</text></view>
+    </view>
+  </view>
+  
+  <view class="vehicle-info-box">
+    <view class="vehicle_info_title">
+      <image style="width:20px; height:20px;" src="../../image/carimg_icon.png"></image>
+      <text style="margin-left:8px; ">车辆受损图片</text>
+    </view>
+    <view class="photo-box">
+      <image class="photo-gallery" src="{{carPicUrls[0]}}" bindtap="previewImage" data-file="{{carPicUrls[0]}} " ></image>
+      <image class="photo-gallery" src="{{carPicUrls[2]}}" bindtap="previewImage" data-file="{{carPicUrls[2]}} "></image>
+      <image class="photo-gallery" src="{{carPicUrls[4]}}" bindtap="previewImage" data-file="{{carPicUrls[4]}} "></image>
+    </view>
+    <view class="photo-box">
+      <image class="photo-gallery" src="{{carPicUrls[1]}}" bindtap="previewImage" data-file="{{carPicUrls[1]}} "></image>
+      <image class="photo-gallery" src="{{carPicUrls[3]}}" bindtap="previewImage" data-file="{{carPicUrls[3]}} "></image>
+      <image class="photo-gallery" src="{{carPicUrls[5]}}" bindtap="previewImage" data-file="{{carPicUrls[5]}} "></image>
+    </view>
+  </view>
+
+  <view class="vehicle-info-box">
+    <view class="vehicle_info_title">
+      <image style="width:20px; height:20px;" src="../../image/loss_info_icon.png"></image>
+      <text style="margin-left:8px; ">定损信息</text>
+    </view>    
+    <view class="coin-line">
+      <text>定损金额</text> <text style="color:#333333; margin-left:16px;">¥</text> <text style="color:#333333;">{{fixedLossAmount}}</text>
+    </view>
+    <view class="coin-line">
+      <text>保险类型</text> <text style="color:#333333; margin-left:16px;">{{instype > 0 ? insuranceType[instype-1] : ''}}</text>
+    </view>
+    <view class="coin-line">
+      <text>是否争议</text> <text style="color:#333333; margin-left:16px;">{{dispute[controversial]}}</text>
+    </view>
+    <view class="photo-box" style="margin-top: 30rpx;">
+      <image class="photo-gallery" src="{{damagePicUrls[0]}}" bindtap="damageImage" data-file="{{damagePicUrls[0]}} " ></image>
+      <image class="photo-gallery" src="{{damagePicUrls[2]}}" bindtap="damageImage" data-file="{{damagePicUrls[2]}} " ></image>
+      <image class="photo-gallery" src="{{damagePicUrls[4]}}" bindtap="damageImage" data-file="{{damagePicUrls[4]}} " ></image>
+    </view>
+    <view class="photo-box">
+      <image class="photo-gallery" src="{{damagePicUrls[1]}}" bindtap="damageImage" data-file="{{damagePicUrls[1]}} " ></image>
+      <image class="photo-gallery" src="{{damagePicUrls[3]}}" bindtap="damageImage" data-file="{{damagePicUrls[3]}} " ></image>
+      <image class="photo-gallery" src="{{damagePicUrls[5]}}" bindtap="damageImage" data-file="{{damagePicUrls[5]}} " ></image>
+    </view>
+    <!-- <view class="coin-line">
+      <image style="width:105px; height:105px; border-radius: 10px;" src="{{idCardFPicUrl}}" bindtap="previewIdCard" data-src="{{idCardFPicUrl}}"></image>
+      <image style="width:105px; height:105px; border-radius: 10px;" src="{{idCardBPicUrl}}" bindtap="previewIdCard" data-src="{{idCardBPicUrl}}"></image>
+    </view>   -->
+  </view>
+
+  <view class="vehicle-info-box">
+    <view class="vehicle_info_title">
+      <image style="width:20px; height:20px;" src="../../image/settle_inst_icon.png"></image>
+      <text style="margin-left:8px; ">结算说明</text>
+    </view>    
+    <view class="coin-line">
+      <text>结算比例</text> <text style="color:#333333; margin-left:16px;">{{settlementRat}}</text> <text style="color:#333333;">%</text>
+    </view>
+    <view class="coin-line">
+      <text>结算金额</text> <text style="color:#333333; margin-left:16px;">¥</text> <text style="color:#333333;"></text><text>{{settlementAmount}}</text>
+    </view>
+    <view class="coin-line">
+      <text>结算状态</text> <text style="color:#333333; margin-left:16px;">{{settlementStatus[setState]}}</text>
+    </view>
+   
+  </view>
+
+</scroll-view>

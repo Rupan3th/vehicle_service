@@ -1,0 +1,35 @@
+<!--pages/binding_card/card_info_view.wxml-->
+<view class="card-shape">
+  <view class="green-header"> 
+    <view style="font-size:14px; margin-left:20px; "><text>银行卡</text></view>
+    <view style="font-size:24px; margin-left:20px; "><text>{{banckcardNumber}}</text></view>
+  </view> 
+
+  <view class="card-contents">
+    <view style="margin-left: 20px; display:flex; flex-direction: column;">
+      <image class="image-line" src="../../image/user_name_icon.png"></image>
+      <image class="image-line" src="../../image/phone_icon.png"></image>
+      <image class="image-line" src="../../image/idcard_icon.png"></image>     
+    </view>
+    <view style="margin-left:20px; ">
+      <view class= "input-line">{{userName}}</view>
+      <view class= "input-line">{{phoneNumber}}</view>
+      <view class= "input-line">{{idcardNumber}}</view>      
+    </view>  
+  </view>
+  <view style="color: #666666; font-size: 14px; margin-top: 20px; margin-left: 6px;">提示：如需修改银行卡信息请联系客服</view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+

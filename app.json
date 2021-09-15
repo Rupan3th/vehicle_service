@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/test/test",
+    "pages/me/me",
+    "pages/logs/logs",
+    "pages/orderList/orderList",
+    "pages/storeList/storeList",
+    "pages/orderDetail/orderDetail",
+    "pages/binding_card/binding_card",
+    "pages/binding_card/card_info_view",
+    "pages/verification_sms/verification_sms",
+    "pages/order_req/order_req",
+    "pages/carbrandList/carbrandList",
+    "pages/insuranceList/insuranceList",
+    "pages/contactService/contactService",
+    "pages/storeList/sharedGarage"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "kbone": true
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/icon_home_inactive.png",
+        "selectedIconPath": "image/icon_home.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "image/icon_me_inactive.png",
+        "selectedIconPath": "image/icon_me.png"
+      }
+    ]
+  }
+}

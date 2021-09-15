@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "瓜子推修",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "tabbar": "../../components/custom-tab-bar/index"
+  }
+}

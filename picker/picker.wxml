@@ -1,0 +1,30 @@
+<!--picker/picker.wxml-->
+<view class="full-box {{isOpen?'cur':''}}">
+	<!--<view class="modal" bindtap="tapModal"></view>-->
+	<view class="picker">
+		<view class="picker-header" style="{{pickerHeaderStyle}}">
+			<view bindtap="sure">
+				<text  style="{{sureStyle}} color: #36AA48;  margin-left: 20px; font-size: 16px; ">{{sureText}}</text>
+			</view>
+			<text style="{{titleStyle}}">{{titleText}}</text>
+			<view bindtap="cancle" >
+				<text style="{{cancelStyle}} color: #666666; margin-right: 20px; font-size: 16px; ">{{cancelText}}</text>
+			</view>
+		</view>
+		<picker-view
+			value="{{value}}"
+			class="picker-content"
+			bindpickstart="_bindpickstart"
+			bindchange="_bindChange"
+			bindpickend="_bindpickend"
+			indicator-style="{{indicatorStyle}}"
+			mask-style="{{maskStyle}}"
+		>
+			<picker-view-column wx:for="{{columnsData}}" wx:key="index">
+				<view wx:for="{{item}}" wx:for-item="itemIn" class="picker-line" wx:key="index">
+					<text class="line1" style="{{chooseItemTextStyle}}">{{isUseKeywordOfShow?itemIn[keyWordsOfShow]:itemIn}}</text>
+				</view>
+			</picker-view-column>
+		</picker-view>
+	</view>
+</view>

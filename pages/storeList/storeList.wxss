@@ -1,0 +1,226 @@
+/* pages/storeList/storeList.wxss */
+page {
+  background-color: #F9F9F9;
+  height: 100%;
+}
+.searchbar-result{
+  margin-top: 0;
+  font-size: 14px;  
+}
+.searchbar-result:before{
+  display: none;
+}
+
+.filter-dropdown{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding:20rpx 80rpx;
+  background-color: #ffffff;  
+}
+.dropdown-tap{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 26rpx;
+  color :#333333;
+}
+.dropdown-arrow-city{
+  border: 8rpx solid transparent;
+  border-top: 10rpx solid #666666;
+  width: 0;
+  height: 0;
+  content: ' ';
+  margin-top: 14rpx;
+  margin-left: 10rpx
+}
+.dropdown-arrow-city-r{
+  border: 8rpx solid transparent;
+  border-bottom: 10rpx solid #666666;
+  width: 0;
+  height: 0;
+  content: ' ';
+  margin-top: 0rpx;
+  margin-left: 10rpx
+}
+.dropdown-arrow-brand{
+  border: 8rpx solid transparent;
+  border-top: 10rpx solid #666666;
+  width: 0;
+  height: 0;
+  content: ' ';
+  margin-top: 14rpx;
+  margin-left: 10rpx
+}
+.dropdown-arrow-brand-r{
+  border: 8rpx solid transparent;
+  border-bottom: 10rpx solid #666666;
+  width: 0;
+  height: 0;
+  content: ' ';
+  margin-top: 0rpx;
+  margin-left: 10rpx
+}
+.dropdown-arrow-type{
+  border: 8rpx solid transparent;
+  border-top: 10rpx solid #666666;
+  width: 0;
+  height: 0;
+  content: ' ';
+  margin-top: 14rpx;
+  margin-left: 10rpx
+}
+.dropdown-arrow-type-r{
+  border: 8rpx solid transparent;
+  border-bottom: 10rpx solid #666666;
+  width: 0;
+  height: 0;
+  content: ' ';
+  margin-top: 0rpx;
+  margin-left: 10rpx
+}
+
+.garagelist-item{
+  background-color: #ffffff;
+  border-radius: 20rpx;
+  margin: 30rpx 40rpx;
+  padding: 20rpx 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+.leftradio-box{
+  display:flex;
+  align-items: center;
+}
+.garage-info-box{
+  margin-left: 18rpx;
+  width: 100%;
+}
+.info-contents{
+  display:flex;
+  flex-direction: row;
+}
+.brand-line{
+  color: #333333; 
+  font-size: 26rpx;     
+}
+.shiesdian{
+  background-color: #36AA48; 
+  color: #ffffff; 
+  font-size: 26rpx; 
+  border-radius: 20rpx; 
+  padding-left: 10rpx; 
+  padding-right: 10rpx;
+}
+.address-line{
+  display:flex;
+  flex-direction: row;
+  margin-top: 12rpx;
+}
+.score-line{
+  display:flex;
+  align-items: center;
+  margin-top: 18rpx;
+}
+.max-char{
+  background-color:#F3F3F3; 
+  margin-left:auto; 
+  margin-right: 0rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx; 
+  font-size:26rpx; 
+  color:#999999;
+  border-radius: 18rpx;
+}
+.insurance-line{
+  color: #999999; 
+  font-size: 26rpx;
+  margin-top: 30rpx;
+}
+.distens-line{
+  display:flex; 
+  flex-direction:row; 
+  align-items:center;
+  font-size: 28rpx;
+  color:#999999;
+  margin-top: 10rpx;
+}
+
+/*////////////////////*/
+.head{
+  background: #EFEFF4;height: 100rpx;
+}
+.box{
+  width: calc(100% - 20px);height: 60rpx;  
+}
+.box .w{width: 100rpx;}
+.say{
+ width: 40rpx;height: 40rpx;
+}
+.img{
+  width: 80rpx;
+  height:80rpx;
+  /* border-radius: 50%; */
+  box-shadow: 0 5px 10px #aaa;
+}
+.star{width: 32rpx;height:32rpx;border-radius: 50%}
+.bgf view:last-of-type{border: 0}
+.r10{right: 20rpx;}
+.right{
+  width: 50rpx;height:50rpx;
+}
+
+.modal-qz{  
+  width:80%; 
+  height:400rpx; 
+  margin-left:10%; 
+  position: fixed; 
+  top: 350rpx; 
+  background-color: #ffffff; 
+  color: #333333;
+  font-size: 32rpx;
+  font-weight: bold;
+  z-index:100;    
+  border-radius: 20rpx; 
+}
+.save-ok{  
+  height: 80rpx;
+  background: #36AA48;
+  color: white;
+  border-radius: 40rpx;  
+  font-size: 32rpx;
+  font-weight: 400;
+  margin-bottom: 30rpx;
+}
+.save-cancel{  
+  height: 80rpx;
+  background: #ffffff;
+  color: 333333;
+  border-radius: 40rpx;  
+  font-size: 32rpx;
+  font-weight: 400;
+  margin-bottom: 30rpx;
+  border: 1px solid #979797;
+}
+.no-result{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;  
+  position: fixed; 
+  top: 300rpx; 
+}
+.garagelist-item .brand {
+  background-color: #f3f3f3;
+  border-radius: 14rpx;
+  padding: 2rpx 10rpx;
+  margin: 5rpx;
+}
+.garagelist-item .insurance:not(:first-child) {
+  margin-left: 20rpx;
+}
+.btn-share {
+  background-color: white;
+  width: fit-content !important;
+  padding: 0px;
+}
